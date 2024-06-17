@@ -1,0 +1,79 @@
+
+/* *****************************STRUCTURE***************************** */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.9em;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+/* *****************************NAVBAR***************************** */
+.navbar {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    padding: 1em 1em;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo{
+    width: 20%;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.navbar-btn {
+    background: #283852;
+    border-radius: 9999px;
+    padding: 0.5em 1em;
+    color: white;
+}
+
+/* *****************************NAVBAR***************************** */
+.banner-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-container-img{
+    width: 100%;
+    filter: blur(0.3em);
+    z-index: 1;
+}
+
+.banner-container-content{
+    z-index: 2;
+    position: absolute;
+    font-size: 1.8em;
+    width: 50%;
+        text-align: center;
+    
+}
