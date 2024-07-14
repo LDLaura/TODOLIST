@@ -1,5 +1,13 @@
 
 /* *****************************STRUCTURE***************************** */
+:root{
+    --font-family : 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --primary : #283852;
+    --secondary : #b99872;
+    --black : #111212;
+    --white : #fafafa;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +15,7 @@
 }
 
 body{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: var(--font-family);
     font-size: 0.9em;
 }
 
@@ -49,13 +57,13 @@ a {
 }
 
 .navbar-btn {
-    background: #283852;
+    background: var(--primary);
     border-radius: 9999px;
     padding: 0.5em 1em;
-    color: white;
+    color: var(--white);
 }
 
-/* *****************************NAVBAR***************************** */
+/* *****************************BANNER***************************** */
 .banner-container{
     display: flex;
     flex-direction: column;
@@ -77,3 +85,4 @@ a {
         text-align: center;
     
 }
+

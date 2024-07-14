@@ -14,10 +14,10 @@
             <img src="./images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo">
             <ul class="navbar-links">
                 <li class="navbar-link">
-                    <a href="#">Mon compte</a>
+                    <a href="http://localhost/TODOLIST/monCompte.php">Mon compte</a>
                 </li>
                 <li class="navbar-link">
-                    <a href="#">S'inscrire</a>
+                    <a href="http://localhost/TODOLIST/inscription.php">S'inscrire</a>
                 </li>
                 <li class="navbar-link">
                     <a href="#" class="navbar-btn">
@@ -27,6 +27,7 @@
             </ul>
         </nav>
     </header>
+    
     <main>
         <section class="banner">
             <div class="banner-container">
