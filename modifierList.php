@@ -69,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <ul class="navbar-links">
                 <li class="navbar-link">
                     <a href="#">Déconnexion</a>
+                <li>
             </ul>
         </nav>
     </header>

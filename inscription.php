@@ -102,6 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </li>
                 <li class="navbar-link">
                     <a href="#">#</a>
+                </li>
             </ul>
         </nav>
     </header>

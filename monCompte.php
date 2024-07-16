@@ -39,10 +39,11 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
             <a href="http://localhost/TODOLIST/"><img src="./images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
             <ul class="navbar-links">
                 <li class="navbar-link">
-                    <a href="ajouterList.php">Ajouter</a>
+                    <a href="ajouterList.php">Ajouter Liste</a>
                 </li>
                 <li class="navbar-link">
                     <a href="#">Déconnexion</a>
+                </li>
             </ul>
         </nav>
     </header>
