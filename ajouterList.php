@@ -19,10 +19,13 @@
             );
         $title = $_POST['title'];
         $content = $_POST['content'];
+        $idUser = $_SESSION['id'];
 
-        $request = "INSERT INTO list (title, content, createdAt) VALUES ('$title', '$content', NOW())";
+        $request = "INSERT INTO list (title, content, createdAt, idUsers) VALUES (:title, :content, NOW(), $idUser)";
 
         $stmt = $db_connexion->prepare($request);
+        $stmt->bindParam(':title', $title);
+        $stmt->bindParam(':content', $content);
         $stmt->execute();
 
         $nb = $stmt->rowCount();

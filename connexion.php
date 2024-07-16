@@ -50,7 +50,7 @@ session_start();
             );
             $data = $db_statement->fetch(PDO::FETCH_ASSOC);
             if(password_verify($password, $data['password'])){
-                $_SESSION['userId'] = $data['id'];
+                $_SESSION['id'] = $data['id'];
                 header('Location: monCompte.php');
             }
             else{
@@ -105,12 +105,12 @@ session_start();
                 <form action="#" method="POST">
                     <div class="form-control">
                         <label for="login">Identfiant :</label>
-                        <input type="text" name="login" id="login" , placeholder="identifiant" required>
+                        <input type="text" name="login" id="login" required>
                     </div>
 
                     <div class="form-control">
                         <label for="password">Mot de passe :</label>
-                        <input type="password" name="password" id="password" , placeholder="mot de passe" required>
+                        <input type="password" name="password" id="password" required>
                     </div>
 
                     <div class="form-control">
