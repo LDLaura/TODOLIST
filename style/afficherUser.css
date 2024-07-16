@@ -104,14 +104,14 @@ h2{
 
   }
 
-  .title {
+  .login {
     font-weight: 700;
     font-size: medium;
     text-transform: uppercase;
     color: var(--primary);
   }
 
-  .content {
+  .password {
     margin: 1rem 0 1rem;
     color: var(--black);
   }
@@ -142,7 +142,3 @@ h2{
     color: var(--primary);
     transition: all .15s ease;
   }
-
-  /* .modify, .delete :hover {
-    background-color: rgb(230, 231, 233);
-  } */

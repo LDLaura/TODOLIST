@@ -8,16 +8,15 @@ if (!isset($_SESSION['id'])) {
 }
 
 //Import
-require_once 'service/db_connect.php';
+require_once '../service/db_connect.php';
 
 $id = $_SESSION['id'];
 
-$request = $db_connexion->prepare('SELECT idListe, title, content, createdAt FROM list WHERE idUsers = :id ORDER BY createdAt DESC LIMIT 5');
+$request = $db_connexion->prepare('SELECT login, password FROM users WHERE id = :id ');
 $request->bindParam(':id', $id);
 $request->execute();
 
 $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
-
 
 ?>
 
@@ -28,21 +27,18 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Simplifiez votre vie et n'oubliez plus rien avec TODOLIST">
-    <title>TO DO LIST : Mon compte</title>
+    <title>TO DO LIST : Mes infos</title>
 
-    <link rel="stylesheet" href="./style/monCompte.css">
+    <link rel="stylesheet" href="../style/afficherUser.css">
 </head>
 
 <body>
     <header class="navbar">
         <nav class="navbar-content">
-            <a href="http://localhost/TODOLIST/"><img src="./images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
+            <a href="http://localhost/TODOLIST/"><img src="../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
             <ul class="navbar-links">
                 <li class="navbar-link">
                     <a href="ajouterList.php">Ajouter Liste</a>
-                </li>
-                <li class="navbar-link">
-                    <a href="./user/afficherUser.php">Mes infos</a>
                 </li>
                 <li class="navbar-link">
                     <a href="#">Déconnexion</a>
@@ -53,7 +49,7 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
 
     <main>
         <section class="main-content">
-            <h2>Mes dernières To Do List :</h2>
+            <h2>Mes informations :</h2>
 
 
             <?php
@@ -63,20 +59,20 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
                     <div class="header">
                         <span class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+                                <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" clip-rule="evenodd" />
                             </svg>
                         </span>
-                        <p class="title"> <?= $valeur['title'] ?> </p>
+                        <p class="login"> <?= $valeur['login'] ?></p>
                     </div>
-                    <p class="content"> <?= $valeur['content'] ?> </p>
+                    <p class="password">Mot de passe : **********</p>
 
                     <div class="button">
                         <form action="#" method="POST">
                             <a href="modifierList.php" class="modify">Modifier</a>
                         </form>
                         <form action="supprimerList.php" method="GET">
-                            <input type="hidden" name="idListe" value="<?= $valeur['idListe'] ?>">
-                            <button type="submit" class="delete">Supprimer</button>
+                            
+                            <button type="submit" class="delete" id="delete" onclick="verifSuppr()">Supprimer</button>
                         </form>
                     </div>
 
