@@ -68,7 +68,7 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
 
                     <div class="button">
                         <form action="#" method="POST">
-                            <a href="modifierList.php" class="modify">Modifier</a>
+                            <a href="../user/modifierUser.php" class="modify">Modifier</a>
                         </form>
                         <form action="supprimerList.php" method="GET">
                             
