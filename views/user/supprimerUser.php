@@ -7,7 +7,7 @@ if (!isset($_SESSION['id'])) {
 }
 
 //Import
-require_once '../service/db_connect.php';
+require_once '../../service/db_connect.php';
 
 $id = $_SESSION['id'];
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_SESSION['id'])) {

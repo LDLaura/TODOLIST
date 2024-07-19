@@ -1,5 +1,5 @@
 <?php
-require_once 'service/db_connect.php';
+require_once '../service/db_connect.php';
 
 //Ouvrir la session
 session_start();
@@ -89,13 +89,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="description" content="Simplifiez votre vie et n'oubliez plus rien avec TODOLIST">
     <title>TO DO LIST : Inscription</title>
 
-    <link rel="stylesheet" href="./style/inscription.css">
+    <link rel="stylesheet" href="../style/inscription.css">
 </head>
 
 <body>
     <header class="navbar">
         <nav class="navbar-content">
-            <a href="index.php"><img src="./images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
+            <a href="../index.php"><img src="../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
             <ul class="navbar-links">
                 <li class="navbar-link">
                     <a href="connexion.php">Connexion</a>

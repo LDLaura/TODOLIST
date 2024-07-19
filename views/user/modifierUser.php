@@ -8,7 +8,7 @@ if (!isset($_SESSION['id'])) {
 }
 
 //Import
-require_once '../service/db_connect.php';
+require_once '../../service/db_connect.php';
 
 //Récupérer les données de la liste pour préremplir le formulaire
 $id = $_SESSION['id'];
@@ -59,13 +59,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="description" content="Simplifiez votre vie et n'oubliez plus rien avec TODOLIST">
     <title>TO DO LIST : modifier mes infos</title>
 
-    <link rel="stylesheet" href="../style/modifierUser.css">
+    <link rel="stylesheet" href="../../style/modifierUser.css">
 </head>
 
 <body>
     <header class="navbar">
         <nav class="navbar-content">
-            <a href="index.php"><img src="../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
+            <a href="index.php"><img src="../../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
             <ul class="navbar-links">
                 <li class="navbar-link">
                     <a href="deconnexion.php">Déconnexion</a>

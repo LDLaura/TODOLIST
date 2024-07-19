@@ -7,7 +7,7 @@ if (!isset($_SESSION['id'])) {
 }
 
 //Import
-require_once 'service/db_connect.php';
+require_once '../../service/db_connect.php';
 
 //Récupérer les données de la liste pour préremplir le formulaire
 $id = $_SESSION['id'];
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nb = $stmt->rowCount();
 
     if ($nb > 0) {
-        header('Location: monCompte.php');
+        header('Location: ../monCompte.php');
     }
 }
 
@@ -59,36 +59,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="description" content="Simplifiez votre vie et n'oubliez plus rien avec TODOLIST">
     <title>TO DO LIST : modifier une liste</title>
 
-    <link rel="stylesheet" href="./style/modifierList.css">
+    <link rel="stylesheet" href="../../style/modifierList.css">
 </head>
 
 <body>
     <header class="navbar">
         <nav class="navbar-content">
-            <a href="index.php"><img src="./images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
+            <a href="/index.php"><img src="../../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
             <ul class="navbar-links">
                 <li class="navbar-link">
-                    <a href="#">Déconnexion</a>
+                    <a href="../user/deconnexion.php">Déconnexion</a>
                 <li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <form action="#" method="POST">
-            <fieldset>
-                <legend>Modifier votre liste</legend>
+        <section class="form">
+            <div class="form-container">
+                <h1>Modifier une liste</h1>
 
-                <label for="title">Titre : </label>
-                <input type="text" name="title" id="title" value="<?= $list['title'] ?>"><br>
+                <form action="#" method="POST">
+                    <div class="form-control">
+                        <label for="title">Titre : </label>
+                        <input type="text" name="title" id="title" required value="<?= $list['title'] ?>"><br>
+                    </div>
 
-                <label for="content">Contenu : </label><br>
-                <textarea name="content" id="content" rows=10 required><?= $list['content'] ?></textarea><br>
+                    <div class="form-control">
+                        <label for="content">Contenu : </label>
+                        <textarea name="content" id="content" rows=10 required><?= $list['content'] ?></textarea><br>
+                    </div>
 
-                <input type="submit" value="MODIFIER">
-
-            </fieldset>
-        </form>
+                    <div class="form-control">
+                        <input type="submit" class="form-button" value="MODIDIER">
+                    </div>
+                </form>    
+            </div>
+        </section>
     </main>
 
 </body>

@@ -14,13 +14,13 @@
             <img src="./images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo">
             <ul class="navbar-links">
                 <li class="navbar-link">
-                    <a href="connexion.php">Mon compte</a>
+                    <a href="./views/monCompte.php">Mon compte</a>
                 </li>
                 <li class="navbar-link">
-                    <a href="inscription.php">S'inscrire</a>
+                    <a href="./views/inscription.php">S'inscrire</a>
                 </li>
                 <li class="navbar-link">
-                    <a href="#" class="navbar-btn">
+                    <a href="./views/bonus/bonus.php" class="navbar-btn">
                         Bonus
                     </a>
                 </li>

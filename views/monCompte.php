@@ -8,7 +8,7 @@ if (!isset($_SESSION['id'])) {
 }
 
 //Import
-require_once 'service/db_connect.php';
+require_once '../service/db_connect.php';
 
 $id = $_SESSION['id'];
 
@@ -30,22 +30,22 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
     <meta name="description" content="Simplifiez votre vie et n'oubliez plus rien avec TODOLIST">
     <title>TO DO LIST : Mon compte</title>
 
-    <link rel="stylesheet" href="./style/monCompte.css">
+    <link rel="stylesheet" href="../style/monCompte.css">
 </head>
 
 <body>
     <header class="navbar">
         <nav class="navbar-content">
-            <a href="index.php"><img src="./images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
+            <a href="../index.php"><img src="../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
             <ul class="navbar-links">
                 <li class="navbar-link">
-                    <a href="ajouterList.php">Ajouter Liste</a>
+                    <a href="./liste/ajouterList.php">Ajouter Liste</a>
                 </li>
                 <li class="navbar-link">
                     <a href="./user/afficherUser.php">Mes infos</a>
                 </li>
                 <li class="navbar-link">
-                    <a href="#">Déconnexion</a>
+                    <a href="./user/deconnexion.php">Déconnexion</a>
                 </li>
             </ul>
         </nav>
@@ -67,14 +67,14 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
                                 <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
                             </svg>
                         </span>
-                        <?php echo'<a href="afficherList.php?id='.$valeur['idListe'].'" class="title">'. $valeur['title'].' </a>'?>
+                        <?php echo'<a href="./liste/afficherList.php?id='.$valeur['idListe'].'" class="title">'. $valeur['title'].' </a>'?>
                     </div>
                     <p class="date"><?php $date = date_create($valeur['createdAt']); echo date_format($date, 'd-M-Y'); ?> </p>
                     <div class="button">
                         <form action="#" method="POST">
-                            <a href="modifierList.php" class="modify">Modifier</a>
+                            <a href="./liste/modifierList.php" class="modify">Modifier</a>
                         </form>
-                        <form action="supprimerList.php" method="GET">
+                        <form action="./liste/supprimerList.php" method="GET">
                             <input type="hidden" name="idListe" value="<?= $valeur['idListe'] ?>">
                             <button type="submit" class="delete">Supprimer</button>
                         </form>

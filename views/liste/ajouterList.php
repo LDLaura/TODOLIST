@@ -7,7 +7,7 @@ if (!isset($_SESSION['id'])) {
 }
 
 //Import
-require_once 'service/db_connect.php';
+require_once '../../service/db_connect.php';
 
 //Récupérer les données du formumaire après validation
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nb = $stmt->rowCount();
 
     if ($nb > 0) {
-        header('Location: monCompte.php');
+        header('Location: ../monCompte.php');
     }
 }
 
@@ -48,13 +48,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="description" content="Simplifiez votre vie et n'oubliez plus rien avec TODOLIST">
     <title>TO DO LIST : ajouter une liste</title>
 
-    <link rel="stylesheet" href="./style/ajouterList.css">
+    <link rel="stylesheet" href="../../style/ajouterList.css">
 </head>
 
 <body>
     <header class="navbar">
         <nav class="navbar-content">
-            <a href="index.php"><img src="./images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
+            <a href="index.php"><img src="../../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
             <ul class="navbar-links">
                 <li class="navbar-link">
                     <a href="#">#</a>
@@ -70,9 +70,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <section class="form">
             <div class="form-container">
                 <h1>Ajouter une liste</h1>
-                <div class="form-control">
-
-                </div>
 
                 <form action="#" method="POST">
                     <div class="form-control">
@@ -87,10 +84,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="form-control">
                         <input type="submit" class="form-button" value="AJOUTER">
-                    </div>
+                    </div>    
+                </form>
             </div>
-            </form>
-
         </section>
     </main>
 

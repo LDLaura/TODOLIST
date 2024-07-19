@@ -1,7 +1,7 @@
 <?php
 session_start();
     //Import
-    require_once 'service/db_connect.php';
+    require_once '../service/db_connect.php';
 
     // Création des constantes pour les erreurs
     const ERROR_REQUIRED = 'Veuillez renseigner ce champ';
@@ -77,16 +77,16 @@ session_start();
     <meta name="description" content="Simplifiez votre vie et n'oubliez plus rien avec TODOLIST">
     <title>TO DO LIST : Connexion</title>
 
-    <link rel="stylesheet" href="./style/connexion.css">
+    <link rel="stylesheet" href="../style/connexion.css">
 </head>
 
 <body>
     <header class="navbar">
         <nav class="navbar-content">
-            <a href="index.php"><img src="./images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
+            <a href="../index.php"><img src="../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
             <ul class="navbar-links">
             <li class="navbar-link">
-                    <a href="inscription.php">S'inscrire</a>
+                    <a href="../views/inscription.php">S'inscrire</a>
                 </li>
             </ul>
         </nav>

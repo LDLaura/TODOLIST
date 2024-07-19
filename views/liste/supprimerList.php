@@ -7,7 +7,7 @@ if (!isset($_SESSION['id'])) {
 }
 
 //Import
-require_once 'service/db_connect.php';
+require_once '../../service/db_connect.php';
 
 $idListe = $_GET['idListe'];
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['idListe'])) {
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['idListe'])) {
 
     $stmt->execute();
   
-    header('Location: monCompte.php');
+    header('Location: ../monCompte.php');
 } else {
     echo "Oops! Une erreur est survenue !";
 }

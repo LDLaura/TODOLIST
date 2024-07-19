@@ -8,7 +8,7 @@ if (!isset($_SESSION['id'])) {
 }
 
 //Import
-require_once '../service/db_connect.php';
+require_once '../../service/db_connect.php';
 
 $id = $_SESSION['id'];
 
@@ -29,16 +29,16 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
     <meta name="description" content="Simplifiez votre vie et n'oubliez plus rien avec TODOLIST">
     <title>TO DO LIST : Mes infos</title>
 
-    <link rel="stylesheet" href="../style/afficherUser.css">
+    <link rel="stylesheet" href="../../style//afficherUser.css">
 </head>
 
 <body>
     <header class="navbar">
         <nav class="navbar-content">
-            <a href="index.php"><img src="../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
+            <a href="../../index.php"><img src="../../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
             <ul class="navbar-links">
                 <li class="navbar-link">
-                    <a href="ajouterList.php">Ajouter Liste</a>
+                    <a href="../monCompte.php">Mes Listes</a>
                 </li>
                 <li class="navbar-link">
                     <a href="deconnexion.php">Déconnexion</a>
