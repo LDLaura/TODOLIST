@@ -82,8 +82,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="title">Titre : </label>
                 <input type="text" name="title" id="title" value="<?= $list['title'] ?>"><br>
 
-                <label for="content">Contenu : </label>
-                <input type="text" name="content" id="content" value="<?= $list['content'] ?>"><br>
+                <label for="content">Contenu : </label><br>
+                <textarea name="content" id="content" rows=10 required><?= $list['content'] ?></textarea><br>
 
                 <input type="submit" value="MODIFIER">
 
