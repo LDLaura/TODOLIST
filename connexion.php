@@ -1,63 +1,66 @@
 <?php
 session_start();
-//Import
-require_once 'service/db_connect.php';
+    //Import
+    require_once 'service/db_connect.php';
 
-// Création des constantes pour les erreurs
-const ERROR_REQUIRED = 'Veuillez renseigner ce champ';
-const ERROR_PASSWORD_NUMBER_OF_CHARACTERS = 'Le mot de passe ne répond pas aux nombres de caractères requis (10)';
+    // Création des constantes pour les erreurs
+    const ERROR_REQUIRED = 'Veuillez renseigner ce champ';
+    const ERROR_PASSWORD_NUMBER_OF_CHARACTERS = 'Le mot de passe ne répond pas aux nombres de caractères requis (10)';
+ 
+    // Création d'un tableau qui recevra les erreurs possibles
+    $errors = [
+        'login'=> '',
+        'password'=> ''
+    ];
+    $message = '';
 
-// Création d'un tableau qui recevra les erreurs possibles
-$errors = [
-    'login' => '',
-    'password' => ''
-];
-$message = '';
+    //Traitement des données si la méyhode du formulaire soumis est bien POST
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $_POST = filter_input_array (INPUT_POST, [
+            'login' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+            'password' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+        ]);
+        //Initialisation des variables qui vont recevoir les datas des champs du formulaire
+        $login = $_POST['login'] ?? '';
+        $password = $_POST['password'] ?? '';
 
-//Traitement des données si la méyhode du formulaire soumis est bien POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $_POST = filter_input_array(INPUT_POST, [
-        'login' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
-        'password' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
-    ]);
-    //Initialisation des variables qui vont recevoir les datas des champs du formulaire
-    $login = $_POST['login'] ?? '';
-    $password = $_POST['password'] ?? '';
+        //Remplissage du tableau qui concerne les erreurs possibles
+        if (!$login) {
+            $errors['login'] = ERROR_REQUIRED;
+        }
+        if (!$password) {
+            $errors['password'] = ERROR_REQUIRED;
+        }
+        elseif(mb_strlen($password) < 10){
+            $errors['password'] = ERROR_PASSWORD_NUMBER_OF_CHARACTERS;
+        }
 
-    //Remplissage du tableau qui concerne les erreurs possibles
-    if (!$login) {
-        $errors['login'] = ERROR_REQUIRED;
-    }
-    if (!$passwd) {
-        $errors['password'] = ERROR_REQUIRED;
-    } elseif (mb_strlen($passwd) < 10) {
-        $errors['password'] = ERROR_PASSWORD_NUMBER_OF_CHARACTERS;
-    }
-
-    //Exéctuer la requête SELECT
-    if ((!empty($login)) && (!empty($password) && (mb_strlen($password) >= 10))) {
-        // Verifier que l'utilisateur n'existe pas en BDD (avec SELECT)
-        $sql = 'SELECT * FROM users
+        //Exéctuer la requête SELECT
+        if ((!empty($login)) && (!empty($password) && (mb_strlen($password) >= 10)) ) {
+            // Verifier que l'utilisateur n'existe pas en BDD (avec SELECT)
+            $sql = 'SELECT * FROM users
                     WHERE login = :login';
-        if (isset($db_connexion)) {
-            $db_statement = $db_connexion->prepare($sql);
+            if(isset($db_connexion)){
+                $db_statement = $db_connexion->prepare($sql);
+            }
+            $db_statement->execute(
+                array(
+                    ':login' => $login
+                )
+            );
+            $data = $db_statement->fetch(PDO::FETCH_ASSOC);
+            if(password_verify($password, $data['password'])){
+                $_SESSION['id'] = $data['id'];
+                header('Location: monCompte.php');
+            }
+            else{
+                $message = "<span class='message'>Le mot de passe est incorrect !</span>";
+            }
         }
-        $db_statement->execute(
-            array(
-                ':login' => $login
-            )
-        );
-        $data = $db_statement->fetch(PDO::FETCH_ASSOC);
-        if (password_verify($password, $data['password'])) {
-            $_SESSION['id'] = $data['id'];
-            header('Location: monCompte.php');
-        } else {
-            $message = "<span class='message'>Le mot de passe est incorrect !</span>";
+        else{
+            $message = "<span class='message'>Veuillez renseigner tous les champs avec un mot de passe de 10 caractères</span>";
         }
-    } else {
-        $message = "<span class='message'>Veuillez renseigner tous les champs avec un mot de passe de 10 caractères</span>";
     }
-}
 
 
 ?>
@@ -82,11 +85,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <nav class="navbar-content">
             <a href="http://localhost/TODOLIST/"><img src="./images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
             <ul class="navbar-links">
-                <li class="navbar-link">
-                    <a href="#">#</a>
-                </li>
-                <li class="navbar-link">
-                    <a href="#">#</a>
+            <li class="navbar-link">
+                    <a href="http://localhost/TODOLIST/inscription.php">S'inscrire</a>
                 </li>
             </ul>
         </nav>
