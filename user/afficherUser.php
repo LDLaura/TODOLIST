@@ -12,7 +12,7 @@ require_once '../service/db_connect.php';
 
 $id = $_SESSION['id'];
 
-$request = $db_connexion->prepare('SELECT login, password FROM users WHERE id = :id ');
+$request = $db_connexion->prepare('SELECT id, login, password FROM users WHERE id = :id ');
 $request->bindParam(':id', $id);
 $request->execute();
 
@@ -35,13 +35,13 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <header class="navbar">
         <nav class="navbar-content">
-            <a href="http://localhost/TODOLIST/"><img src="../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
+            <a href="index.php"><img src="../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
             <ul class="navbar-links">
                 <li class="navbar-link">
                     <a href="ajouterList.php">Ajouter Liste</a>
                 </li>
                 <li class="navbar-link">
-                    <a href="#">Déconnexion</a>
+                    <a href="deconnexion.php">Déconnexion</a>
                 </li>
             </ul>
         </nav>
@@ -70,22 +70,17 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
                         <form action="#" method="POST">
                             <a href="../user/modifierUser.php" class="modify">Modifier</a>
                         </form>
-                        <form action="supprimerList.php" method="GET">
-                            
-                            <button type="submit" class="delete" id="delete" onclick="verifSuppr()">Supprimer</button>
+                        <form action="supprimerUser.php" method="GET">
+                            <input type="hidden" name="idListe" value="<?= $valeur['id'] ?>">    
+                            <button type="submit" class="delete" id="delete">Supprimer</button>
                         </form>
                     </div>
-
                 </div>
-
             <?php
             }
             ?>
-
         </section>
-
     </main>
-
 </body>
 
 </html>

@@ -14,10 +14,10 @@
             <img src="./images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo">
             <ul class="navbar-links">
                 <li class="navbar-link">
-                    <a href="http://localhost/TODOLIST/connexion.php">Mon compte</a>
+                    <a href="connexion.php">Mon compte</a>
                 </li>
                 <li class="navbar-link">
-                    <a href="http://localhost/TODOLIST/inscription.php">S'inscrire</a>
+                    <a href="inscription.php">S'inscrire</a>
                 </li>
                 <li class="navbar-link">
                     <a href="#" class="navbar-btn">

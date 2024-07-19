@@ -83,10 +83,10 @@ session_start();
 <body>
     <header class="navbar">
         <nav class="navbar-content">
-            <a href="http://localhost/TODOLIST/"><img src="./images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
+            <a href="index.php"><img src="./images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
             <ul class="navbar-links">
             <li class="navbar-link">
-                    <a href="http://localhost/TODOLIST/inscription.php">S'inscrire</a>
+                    <a href="inscription.php">S'inscrire</a>
                 </li>
             </ul>
         </nav>
