@@ -54,14 +54,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <header class="navbar">
         <nav class="navbar-content">
-            <a href="index.php"><img src="../../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
+            <a href="../../index.php"><img src="../../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
             <ul class="navbar-links">
                 <li class="navbar-link">
-                    <a href="#">#</a>
+                    <a href="../monCompte.php">Mes Listes</a>
                 </li>
                 <li class="navbar-link">
-                    <a href="#">#</a>
+                    <a href="../user/deconnexion.php">Déconnexion</a>
                 </li>
+            </ul>
             </ul>
         </nav>
     </header>
@@ -84,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="form-control">
                         <input type="submit" class="form-button" value="AJOUTER">
-                    </div>    
+                    </div>
                 </form>
             </div>
         </section>

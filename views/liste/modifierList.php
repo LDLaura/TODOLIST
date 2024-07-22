@@ -68,6 +68,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a href="/index.php"><img src="../../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
             <ul class="navbar-links">
                 <li class="navbar-link">
+                    <a href="../monCompte.php">Mes Listes</a>
+                </li>
+                <li class="navbar-link">
                     <a href="../user/deconnexion.php">Déconnexion</a>
                 <li>
             </ul>
@@ -93,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="form-control">
                         <input type="submit" class="form-button" value="MODIDIER">
                     </div>
-                </form>    
+                </form>
             </div>
         </section>
     </main>

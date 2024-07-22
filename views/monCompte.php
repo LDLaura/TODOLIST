@@ -55,7 +55,6 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
         <section class="main-content">
             <h2>Mes dernières To Do List :</h2>
 
-
             <?php
             foreach ($resultat as $valeur) {
                 
@@ -79,7 +78,6 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
                             <button type="submit" class="delete">Supprimer</button>
                         </form>
                     </div>
-
                 </div>
 
             <?php
