@@ -70,14 +70,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //Je vérifie que $_SESSION à bien récupéré un utilisateur 
     if (isset($_SESSION['userId'])) {
         $userId = $_SESSION['userId'];
-    } else {
-        header('Location: connexion.php');
-    }
+    } 
 }
-
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -131,8 +126,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         </section>
     </main>
-
-
 
 </body>
 
