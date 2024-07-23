@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <header class="navbar">
         <nav class="navbar-content">
-            <a href="index.php"><img src="../../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
+            <a href="../../index.php"><img src="../../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
             <ul class="navbar-links">
                 <li class="navbar-link">
                     <a href="deconnexion.php">Déconnexion</a>
@@ -74,21 +74,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </nav>
     </header>
 
+
     <main>
-        <form action="#" method="POST">
-            <fieldset>
-                <legend>Modifier vos infos</legend>
+        <section class="form">
+            <div class="form-container">
+                <h1>Modifier vos infos</h1>
 
-                <label for="login">Login : </label>
-                <input type="text" name="login" id="login" value="<?= $user['login'] ?>"><br>
+                <form action="#" method="POST">
+                    <div class="form-control">
+                        <label for="title">Login : </label>
+                        <input type="text" name="login" id="login" required value="<?= $user['login'] ?>"><br>
+                    </div>
 
-                <label for="password">Nouveau mot de passe : </label>
-                <input type="password" name="password" id="password"><br>
+                    <div class="form-control">
+                        <label for="content">Nouveau mot de passe : </label>
+                        <input type="password" name="password" id="password"><br>
+                    </div>
 
-                <input type="submit" value="MODIFIER">
-
-            </fieldset>
-        </form>
+                    <div class="form-control">
+                        <input type="submit" class="form-button" value="MODIDIER">
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
 
 </body>

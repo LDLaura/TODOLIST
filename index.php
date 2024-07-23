@@ -7,6 +7,7 @@
     <title>TO DO LIST</title>
 
     <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style//responsive/mainResponsive.css">
 </head>
 <body>
     <header class="navbar">
@@ -34,7 +35,6 @@
                 <p class="banner-container-content">
                     BIENVENUE DANS NOTES, DESORMAIS TOUT SERA NOTÉ ICI !
                 </p>
-                <img class="banner-container-img" src="./images/banner-img.jpg" alt="Ceci représente le dessus d'une table  une tasse de café, un pot de crayons et un bloc note avec une to do list ">
             </div>
         </section>
     </main>

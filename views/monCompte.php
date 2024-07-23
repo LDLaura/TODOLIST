@@ -31,6 +31,7 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
     <title>TO DO LIST : Mon compte</title>
 
     <link rel="stylesheet" href="../style/monCompte.css">
+    <link rel="stylesheet" href="../style/responsive/monCompteResponsive.css">
 </head>
 
 <body>
@@ -52,8 +53,9 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
     </header>
 
     <main>
-        <section class="main-content">
-            <h2>Mes dernières To Do List :</h2>
+        <h2>Mes dernières To Do List :</h2>
+        <ol class="main-content">
+            
 
             <?php
             foreach ($resultat as $valeur) {
@@ -84,7 +86,7 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
             }
             ?>
 
-        </section>
+        </ol>
 
     </main>
 

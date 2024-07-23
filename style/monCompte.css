@@ -78,6 +78,7 @@ h2{
     background-color: var(--secondary);
     padding: 1rem;
     margin: 2em 2em;
+    width: 80%;
 }
 
 .header {
@@ -146,3 +147,11 @@ h2{
   /* .modify, .delete :hover {
     background-color: rgb(230, 231, 233);
   } */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    justify-content: center
+}

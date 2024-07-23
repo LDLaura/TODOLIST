@@ -15,8 +15,11 @@
 }
 
 body{
+    height: 100vh;
     font-family: var(--font-family);
     font-size: 0.9em;
+    background-image: url('../images/banner-img.jpg'); 
+    background-size: cover;
 }
 
 ul,
@@ -38,6 +41,9 @@ a {
     top: 0;
     padding: 1em 1em;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    z-index: 999;
+    height: 6em;
 }
 
 .navbar-logo{
@@ -64,6 +70,12 @@ a {
 }
 
 /* *****************************BANNER***************************** */
+main{
+    padding-top: 6em;
+    height: 100%; 
+    backdrop-filter: blur(0.3em);
+}
+
 .banner-container{
     display: flex;
     flex-direction: column;
@@ -71,18 +83,13 @@ a {
     align-items: center;
 }
 
-.banner-container-img{
-    width: 100%;
-    filter: blur(0.3em);
-    z-index: 1;
-}
-
 .banner-container-content{
     z-index: 2;
     position: absolute;
     font-size: 1.8em;
     width: 50%;
-        text-align: center;
+    text-align: center;
+    padding-top: 25%;
     
 }
 
