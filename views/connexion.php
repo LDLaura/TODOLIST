@@ -5,7 +5,7 @@ session_start();
 
     // Création des constantes pour les erreurs
     const ERROR_REQUIRED = 'Veuillez renseigner ce champ';
-    const ERROR_PASSWORD_NUMBER_OF_CHARACTERS = 'Le mot de passe ne répond pas aux nombres de caractères requis (10)';
+    const ERROR_PASSWORD_NUMBER_OF_CHARACTERS = 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre, un caractère spécial, pas d\'espace et doit faire entre 8 et 16 caractères';
  
     // Création d'un tableau qui recevra les erreurs possibles
     $errors = [
@@ -31,7 +31,7 @@ session_start();
         if (!$password) {
             $errors['password'] = ERROR_REQUIRED;
         }
-        elseif(mb_strlen($password) < 10){
+        elseif (preg_match('/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/', $password)){
             $errors['password'] = ERROR_PASSWORD_NUMBER_OF_CHARACTERS;
         }
 
@@ -58,7 +58,7 @@ session_start();
             }
         }
         else{
-            $message = "<span class='message'>Veuillez renseigner tous les champs avec un mot de passe de 10 caractères</span>";
+            $message = "<span class='message'> " . ERROR_PASSWORD_NUMBER_OF_CHARACTERS . "</span>";
         }
     }
 

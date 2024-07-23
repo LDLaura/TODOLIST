@@ -6,7 +6,7 @@ session_start();
 
 //Création des constantes pour les erreurs
 const ERROR_REQUIRED = 'Veuillez renseigner ce champ';
-const ERROR_PASSWORD_NUMBER_OF_CHARACTERS = 'Le mot de passe ne répond pas aux nombre de caractères demandés (10)';
+const ERROR_PASSWORD_NUMBER_OF_CHARACTERS = 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre, un caractère spécial, pas d\'espace et doit faire entre 8 et 16 caractères';
 
 //Création d'un tableau qui recevra les erreurs
 $errors = [
@@ -31,12 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     if (!$password) {
         $errors['password'] = ERROR_REQUIRED;
-    } elseif (mb_strlen($password) < 10) {
+    } elseif (preg_match('/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/', $password)) {
         $errors['password'] = ERROR_PASSWORD_NUMBER_OF_CHARACTERS;
     }
 
     //Executer la requête INSERT INTO
-    if (($login) && ($password) && (mb_strlen($password) >= 10)) {
+    if (($login) && ($password) &&  preg_match('/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/', $password)) {
         //Vérifier que l'utilisateur n'existe pas en BDD avec SELECT
         $sql = 'SELECT login FROM users WHERE login = :login';
         if (isset($db_connexion)) {
@@ -64,13 +64,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $message = "<span classe='message'>Le login existe déjà !</span>";
         }
     } else {
-        $message = "<span class='message'>Veuillez renseigner tous les champs avec un mot de passe de 10 caractères</span>";
+        $message = "<span class='message'> " . ERROR_PASSWORD_NUMBER_OF_CHARACTERS . "</span>";
     }
 
     //Je vérifie que $_SESSION à bien récupéré un utilisateur 
     if (isset($_SESSION['userId'])) {
         $userId = $_SESSION['userId'];
-    } 
+    }
 }
 ?>
 
