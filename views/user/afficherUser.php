@@ -29,7 +29,10 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
     <meta name="description" content="Simplifiez votre vie et n'oubliez plus rien avec TODOLIST">
     <title>TO DO LIST : Mes infos</title>
 
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="../../style/responsive/mainResponsive.css">
     <link rel="stylesheet" href="../../style//afficherUser.css">
+    <link rel="stylesheet" href="../../style/responsive/afficherUserResponsive.css">
 </head>
 
 <body>
@@ -48,10 +51,8 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
     </header>
 
     <main>
+        <h2>Mes informations :</h2>
         <section class="main-content">
-            <h2>Mes informations :</h2>
-
-
             <?php
             foreach ($resultat as $valeur) {
             ?>
@@ -71,7 +72,7 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
                             <a href="../user/modifierUser.php" class="modify">Modifier</a>
                         </form>
                         <form action="supprimerUser.php" method="GET">
-                            <input type="hidden" name="idListe" value="<?= $valeur['id'] ?>">    
+                            <input type="hidden" name="idListe" value="<?= $valeur['id'] ?>">
                             <button type="submit" class="delete" id="delete">Supprimer</button>
                         </form>
                     </div>

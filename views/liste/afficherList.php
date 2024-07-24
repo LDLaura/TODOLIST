@@ -36,6 +36,8 @@ $content = $resultat[0]['content'];
     <meta name="description" content="Simplifiez votre vie et n'oubliez plus rien avec TODOLIST">
     <title>TO DO LIST : Liste</title>
 
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="../../style/responsive/mainResponsive.css">
     <link rel="stylesheet" href="../../style/afficherList.css">
 </head>
 

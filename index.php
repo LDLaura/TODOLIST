@@ -7,7 +7,9 @@
     <title>TO DO LIST</title>
 
     <link rel="stylesheet" href="./style/main.css">
-    <link rel="stylesheet" href="./style//responsive/mainResponsive.css">
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/responsive/mainResponsive.css">
+    <link rel="stylesheet" href="./style/responsive/indexResponsive.css">
 </head>
 <body>
     <header class="navbar">

@@ -1,78 +1,16 @@
-
-/* *****************************STRUCTURE***************************** */
-:root{
-    --font-family : 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    --primary : #283852;
-    --secondary : #b99872;
-    --black : #111212;
-    --white : #fafafa;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    font-family: var(--font-family);
-    font-size: 0.9em;
-}
-
-ul,
-ol {
-    list-style: none;
-    padding-left: 0;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-}
-
-/* *****************************NAVBAR***************************** */
-.navbar {
-    position: sticky;
-    width: 100%;
-    top: 0;
-    padding: 1em 1em;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-    background-color: var(--white);
-}
-
-.navbar-logo{
-    width: 40%;
-}
-
-.navbar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar-links {
-    display: flex;
-    gap: 2em;
-    align-items: center;
-    text-align: center;
-}
-
-.navbar-btn {
-    background: var(--primary);
-    border-radius: 9999px;
-    padding: 0.5em 1em;
-    color: var(--white);
-}
-
 /* *****************************MAIN***************************** */
 h2{
     padding: 1em 1em;
     font-size: 1.2em;
 }
 
+.main-content{
+  display: flex;
+  justify-content: center;
+}
+
 .card{
-    max-width: 320px;
+    width: 320px;
     height: 200px;
     border-radius: 1rem;
     background-color: var(--secondary);

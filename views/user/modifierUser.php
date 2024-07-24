@@ -59,7 +59,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="description" content="Simplifiez votre vie et n'oubliez plus rien avec TODOLIST">
     <title>TO DO LIST : modifier mes infos</title>
 
-    <link rel="stylesheet" href="../../style/modifierUser.css">
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="../../style/responsive/mainResponsive.css">
+    <link rel="stylesheet" href="../../style/formulaireUser.css">
 </head>
 
 <body>
@@ -67,6 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <nav class="navbar-content">
             <a href="../../index.php"><img src="../../images/logo-notes.png" alt="Ce logo représente une forme oval marron avec écrit dessus Notes" class="navbar-logo"></a>
             <ul class="navbar-links">
+            <li class="navbar-link">
+                    <a href="afficherUser.php">Mes infos</a>
+                <li>
                 <li class="navbar-link">
                     <a href="deconnexion.php">Déconnexion</a>
                 <li>

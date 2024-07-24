@@ -1,0 +1,54 @@
+/* *****************************FORMULAIRE***************************** */
+.form{
+    font-size: 1rem;
+    margin-top: 2rem;
+    color: var(--white);
+
+}
+
+.form-container{
+    border-radius: 5px;
+    border: 1px solid var(--black);
+    background-color: var(--primary);
+    margin: auto;
+    width: 20rem;
+    height: 23rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container h1{
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1em;
+    
+}
+
+.form-container a{
+    color: var(--text-color-light);
+    padding: 10px 0;
+    display: block;
+    transition: border 0.7s;
+    text-align: center;
+    border: 1px solid var(--primary);
+    text-decoration: none;
+}
+
+.form-control{
+    display: flex;
+    flex-flow: column;
+    margin: 1rem 1rem;
+    height: 3.2rem;
+}
+
+.form-control input{
+    border: var(--border);
+    border-radius: 3px;
+    padding: 0.2rem;
+}
+
+.form-button{
+    margin-top: 1rem;
+    background-color : var(--secondary);
+}

@@ -30,6 +30,8 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
     <meta name="description" content="Simplifiez votre vie et n'oubliez plus rien avec TODOLIST">
     <title>TO DO LIST : Mon compte</title>
 
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/responsive/mainResponsive.css">
     <link rel="stylesheet" href="../style/monCompte.css">
     <link rel="stylesheet" href="../style/responsive/monCompteResponsive.css">
 </head>

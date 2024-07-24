@@ -1,0 +1,27 @@
+body{
+    background-image: url('../images/banner-img.jpg'); 
+    background-size: cover;
+}
+
+/* *****************************BANNER***************************** */
+main{
+    padding-top: 6em;
+    height: 100%; 
+    backdrop-filter: blur(0.3em);
+}
+
+.banner-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-container-content{
+    z-index: 2;
+    position: absolute;
+    font-size: 1.8em;
+    width: 50%;
+    text-align: center;
+    padding-top: 50%; 
+}

@@ -61,12 +61,7 @@ session_start();
             $message = "<span class='message'> " . ERROR_PASSWORD_NUMBER_OF_CHARACTERS . "</span>";
         }
     }
-
-
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -77,7 +72,9 @@ session_start();
     <meta name="description" content="Simplifiez votre vie et n'oubliez plus rien avec TODOLIST">
     <title>TO DO LIST : Connexion</title>
 
-    <link rel="stylesheet" href="../style/connexion.css">
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/responsive/mainResponsive.css">
+    <link rel="stylesheet" href="../style/formulaireUser.css">
 </head>
 
 <body>

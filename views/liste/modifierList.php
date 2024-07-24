@@ -59,7 +59,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="description" content="Simplifiez votre vie et n'oubliez plus rien avec TODOLIST">
     <title>TO DO LIST : modifier une liste</title>
 
-    <link rel="stylesheet" href="../../style/modifierList.css">
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="../../style/responsive/mainResponsive.css">
+    <link rel="stylesheet" href="../../style/formulaireList.css">
 </head>
 
 <body>
