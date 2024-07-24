@@ -1,6 +1,6 @@
 <?php
 session_start();
-    //Import
+    //Import BDD
     require_once '../service/db_connect.php';
 
     // Création des constantes pour les erreurs

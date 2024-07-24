@@ -1,4 +1,5 @@
 <?php
+//Import BDD
 require_once '../service/db_connect.php';
 
 //Ouvrir la session

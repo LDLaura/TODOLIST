@@ -7,7 +7,7 @@ if (!isset($_SESSION['id'])) {
     header('Location: connexion.php');
 }
 
-//Import
+//Import BDD
 require_once '../../service/db_connect.php';
 
 //Dans l'url retrouver l'id de la liste

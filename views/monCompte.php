@@ -7,7 +7,7 @@ if (!isset($_SESSION['id'])) {
     header('Location: connexion.php');
 }
 
-//Import
+//Import BDD
 require_once '../service/db_connect.php';
 
 $id = $_SESSION['id'];
@@ -17,7 +17,6 @@ $request->bindParam(':id', $id);
 $request->execute();
 
 $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
-
 
 ?>
 
@@ -57,11 +56,9 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
     <main>
         <h2>Mes dernières To Do List :</h2>
         <ol class="main-content">
-            
-
             <?php
-            foreach ($resultat as $valeur) {
-                
+            //Affichage des listes
+            foreach ($resultat as $valeur) { 
             ?>
                 <div class="card">
                     <div class="header">

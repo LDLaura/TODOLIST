@@ -6,7 +6,7 @@ if (!isset($_SESSION['id'])) {
     header('Location: connexion.php');
 }
 
-//Import
+//Import BDD
 require_once '../../service/db_connect.php';
 
 //Récupérer les données de la liste pour préremplir le formulaire

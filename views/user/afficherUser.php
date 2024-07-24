@@ -54,6 +54,7 @@ $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
         <h2>Mes informations :</h2>
         <section class="main-content">
             <?php
+            //Affichage des infos de l'utilisateur
             foreach ($resultat as $valeur) {
             ?>
                 <div class="card">
