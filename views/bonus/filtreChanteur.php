@@ -1,9 +1,9 @@
 <?php
-require_once '../../service/db_connect_music.php';
+    require_once '../../service/db_connect_music.php';
 
-$request = 'SELECT id, nom FROM artiste WHERE estchanteur = 1';
-$stmt = $db_connexion->query($request);
-$chanteurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $request = 'SELECT id, nom FROM artiste WHERE estchanteur = 1';
+    $stmt = $db_connexion->query($request);
+    $chanteurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -16,6 +16,8 @@ $chanteurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BONUS : BDD MUSIC</title>
 
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="../../style/responsive/mainResponsive.css">
     <link rel="stylesheet" href="../../style/bonus/filtreChanteur.css">
 </head>
 

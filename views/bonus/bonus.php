@@ -15,6 +15,8 @@ $chanteurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BONUS : BDD MUSIC</title>
 
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="../../style/responsive/mainResponsive.css">
     <link rel="stylesheet" href="../../style/bonus/bonus.css">
 </head>
 

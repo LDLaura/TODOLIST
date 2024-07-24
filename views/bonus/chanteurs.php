@@ -1,23 +1,30 @@
 <?php
-require_once '../../service/db_connect_music.php';
+    require_once '../../service/db_connect_music.php';
 
-$idArtiste = $_GET['id'];
+    $idArtiste = $_GET['id'];
 
-$request = 'SELECT nom, groupe.nom as "nom groupe", album.titre as "titre album" FROM artiste 
-            LEFT JOIN membregroupe ON membregroupe.idartiste = artiste.id
-            LEFT JOIN groupe ON groupe.id = membregroupe.id
-            LEFT JOIN album ON album.id = group.id
-            WHERE idArtiste = :id';
-$stmt = $db_connexion->prepare($request);
-$stmt->bindParam(':id', $idArtiste);
+    $request = 'SELECT artiste.nom, groupe.nom as "nom_groupe", album.titre as "titre album" FROM artiste 
+                LEFT JOIN membregroupe ON membregroupe.idartiste = artiste.id
+                LEFT JOIN groupe ON groupe.id = membregroupe.id
+                LEFT JOIN album ON album.id = groupe.id
+                WHERE artiste.id = :id';
+    $stmt = $db_connexion->prepare($request);
+    $stmt->bindParam(':id', $idArtiste);
 
-$stmt->execute();
-$resultat = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->execute();
+    $resultat = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    var_dump($resultat);
 
-$chanteur = $resultat['artiste.nom'];
-$groupe = $resultat['groupe.nom'];
-$album = $resultat['album.titre'];
+    $chanteur = $resultat[0]['nom'];
 
+    $infoChanteur = '';
+    foreach ($resultat as $value) {
+        $nomGroupe = $value['nom_groupe'] ? $value['nom_groupe'] : 'aucun nom groupe';
+        $albumTitre = $value['titre album'] ? $value['titre album'] : 'aucun album';
+        $infoChanteur .="<p>". $nomGroupe ."</p>
+                    <p>". $albumTitre ."</p>";
+    }
+    var_dump($infoChanteur);
 ?>
 
 
@@ -29,6 +36,8 @@ $album = $resultat['album.titre'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BONUS : BDD MUSIC</title>
 
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="../../style/responsive/mainResponsive.css">
     <link rel="stylesheet" href="../../style/bonus/chanteurs.css">
 </head>
 
@@ -50,7 +59,6 @@ $album = $resultat['album.titre'];
 
     <main>
         <section class="main-content">
-            
             <div class="card">
                     <div class="header">
                         <span class="icon">
@@ -60,10 +68,9 @@ $album = $resultat['album.titre'];
                         </svg>
                         </span>
                         <p class="chanteur"><?= $chanteur ?></p>
-                        </div>
-                        <p class="content"><?= $groupe ?></p>
-                        <p class="content"><?= $album ?></p>
-                </div>
+                    </div>
+                    <p class="chanteur"><?= $infoChanteur ?></p>
+            </div>
         </section>
     </main>
 </body>
